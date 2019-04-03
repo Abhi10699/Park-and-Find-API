@@ -1,0 +1,26 @@
+  -Root
+    -Users
+      -firebase_random_string
+        firstname: String
+        lastname: String
+        u_id: String
+        devices:{
+          device_1:{
+            device_id:String
+          } 
+          device_2:{
+            device_id:string
+          }
+        }
+    
+    -Device:
+      -firebase_random_strin (device_id):
+        -led
+          -State:boolean // On or Off
+        -buzzer
+          -State:boolean
+        -fuel
+          -state:number
+        -GPS
+          -lat:number
+          -lon:number

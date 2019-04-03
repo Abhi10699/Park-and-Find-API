@@ -1,0 +1,22 @@
+{
+  "name": "parkandfind",
+  "version": "1.0.0",
+  "description": "API backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Server",
+    "firebase"
+  ],
+  "author": "Abhi Patel",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "firebase-admin": "^7.2.0"
+  }
+}
