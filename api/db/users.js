@@ -33,4 +33,15 @@ module.exports = (admin,app)=>{
     db.ref(`/Users/${uId}/Vehicles/${vehicle_id}/led/`).set(status)
     res.send("Working")
   })
+
+  app.post('/api/user/findCar',function(req,res){
+    let uId = req.body.uid;
+    let vehicle_id = req.body.vId;
+    let status = req.body.led_status;
+    console.log(status);
+    let updates = {};
+    db.ref(`/Users/${uId}/Vehicles/${vehicle_id}/buz/`).set(status)
+    db.ref(`/Users/${uId}/Vehicles/${vehicle_id}/led/`).set(status)
+    res.send("Working")
+  })
 }
