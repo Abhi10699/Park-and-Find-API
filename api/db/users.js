@@ -34,6 +34,16 @@ module.exports = (admin,app)=>{
     res.send("Working")
   })
 
+  app.post('/api/user/buzzer',function(req,res){
+    let uId = req.body.uid;
+    let vehicle_id = req.body.vId;
+    let status = req.body.led_status;
+    console.log(status);
+    let updates = {};
+    db.ref(`/Users/${uId}/Vehicles/${vehicle_id}/buz/`).set(status)
+    res.send("Working")
+  })
+  
   app.post('/api/user/findCar',function(req,res){
     let uId = req.body.uid;
     let vehicle_id = req.body.vId;
