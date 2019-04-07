@@ -44,4 +44,15 @@ module.exports = (admin,app)=>{
     db.ref(`/Users/${uId}/Vehicles/${vehicle_id}/led/`).set(status)
     res.send("Working")
   })
-}
+
+  app.post('/api/user/getlocations',function(req,res){
+    let uId = req.body.uid;
+    let vehicle_id = req.body.vId;
+    db.ref(`/Users/${uId}/Vehicles/${vehicle_id}/`).once('value',function(snapshot){
+      let lat = snapshot.val().lat;
+      let lng = snapshot.val().lng;
+
+      res.send(`https://www.google.com/maps/@${lat},${lng},14z`)
+    })
+  })
+;}
